@@ -1,6 +1,7 @@
 # This is my file -Abhinay
 
 from django.http import HttpResponse as Res
+from django.shortcuts import render
 import os
 def read(request):
     with open(os.getcwd()+'/myproject/sample.txt','r') as smp:
@@ -25,7 +26,7 @@ def charcount(request):
 def capitalizefirst(request):
     return Res('Capitalize First')
 def home(request):
-    return Res('Home')
+    return render(request,'index.html')
 
 
 def about(request):
